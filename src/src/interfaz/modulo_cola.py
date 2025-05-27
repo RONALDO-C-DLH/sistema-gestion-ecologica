@@ -18,6 +18,25 @@ def mostrar_ventana_cola():
     salida = tk.Text(ventana, height=10, width=45)
     salida.pack(pady=10)
 
+    
+    def atender():
+        solicitud = cola.atender_solicitud()
+        if solicitud:
+            salida.insert(tk.END, f"Atendida: {solicitud}\n")
+        else:
+            salida.insert(tk.END, "No hay solicitudes para atender.\n")
+
+    def siguiente():
+        solicitud = cola.ver_siguiente()
+        if solicitud:
+            salida.insert(tk.END, f"Siguiente: {solicitud}\n")
+        else:
+            salida.insert(tk.END, "No hay solicitudes pendientes.\n")
+
+    tk.Button(ventana, text="Atender Solicitud", command=atender, bg="#ffcccc").pack()
+    tk.Button(ventana, text="Ver Siguiente", command=siguiente, bg="#ffcccc").pack()
+
+
     def agregar():
         try:
             cola.agregar_solicitud(entrada.get(), int(prioridad.get()))

@@ -23,6 +23,23 @@ def mostrar_ventana_arbol():
 
     salida = tk.Text(ventana, height=10, width=45)
     salida.pack()
+    
+
+    busqueda = tk.Entry(ventana, width=30)
+    busqueda.insert(0, "Buscar por nombre")
+    busqueda.pack(pady=2)
+
+    def buscar():
+        r = arbol.buscar_por_nombre(busqueda.get())
+        salida.delete(1.0, tk.END)
+        if r:
+            salida.insert(tk.END, f"Encontrado: {r.nombre} - {r.tipo} - {r.ubicacion}\n")
+                          
+        else:
+            salida.insert(tk.END, "No se encontró el recurso \n")
+
+    tk.Button(ventana, text="Buscar", command=buscar, bg="#cce6ff").pack()
+
 
     def agregar():
         recurso = RecursoEcologico(tipo.get(), nombre.get(), ubicacion.get())
@@ -40,4 +57,4 @@ def mostrar_ventana_arbol():
         imprimir(arbol.raiz)
 
     tk.Button(ventana, text="Agregar", command=agregar, bg="#cce6ff").pack()
-    tk.Button(ventana, text="Mostrar InOrden", command=mostrar, bg="#cce6ff").pack()
+    tk.Button(ventana, text="Mostrar En Orden", command=mostrar, bg="#cce6ff").pack()

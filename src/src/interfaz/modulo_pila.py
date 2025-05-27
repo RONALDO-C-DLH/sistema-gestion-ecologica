@@ -26,6 +26,18 @@ def mostrar_ventana_pila():
             salida.insert(tk.END, f"Agregada: {actividad} (Efectividad {nivel}/5)\n")
         except:
             salida.insert(tk.END, "Error: Efectividad debe ser entre 1 y 5.\n")
+    
+
+    def eliminar_ultima():
+        actividad = pila.eliminar_ultima_actividad()
+        if actividad:
+            salida.insert(tk.END, f"Actividad eliminada: {actividad}\n")
+        else:
+            salida.insert(tk.END, "No hay actividades para eliminar.\n")
+
+    tk.Button(ventana, text="Eliminar Última", command=eliminar_ultima, bg="#ccffcc").pack()
+
+
 
     def mostrar_todas():
         salida.delete(1.0, tk.END)
