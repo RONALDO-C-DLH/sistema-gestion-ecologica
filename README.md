@@ -21,3 +21,20 @@ Aplicación para gestionar recursos ecológicos en la ciudad:
 ## Uso
 ```bash
 python src/main.py
+
+## 📚 Documentación
+
+La documentación automática está en:  
+https://<tu-usuario>.github.io/sistema-gestion-ecologica/
+
+Para generarla localmente:
+
+```bash
+# Activa el entorno
+source venv/Scripts/activate  
+# Genera los .rst
+python -m sphinx.ext.apidoc -o docs src  
+# Compila los HTML
+cd docs
+make.bat html
+
