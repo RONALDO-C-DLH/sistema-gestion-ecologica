@@ -1,0 +1,9 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Archivos de sistema
+.DS_Store
