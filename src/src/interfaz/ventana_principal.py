@@ -4,6 +4,7 @@ from interfaz.modulo_cola import mostrar_ventana_cola
 from interfaz.modulo_arbol import mostrar_ventana_arbol
 from interfaz.modulo_grafo import mostrar_ventana_grafo
 from interfaz.modulo_lista import mostrar_ventana_lista
+from interfaz.modulo_tareas import mostrar_ventana_tareas
 
 class VentanaPrincipal:
     def __init__(self, master):
@@ -18,7 +19,8 @@ class VentanaPrincipal:
             ("Solicitudes (Cola)", mostrar_ventana_cola),
             ("Recursos (Árbol)", mostrar_ventana_arbol),
             ("Iniciativas (Grafo)", mostrar_ventana_grafo),
-            ("Elementos (Lista)", mostrar_ventana_lista)
+            ("Elementos (Lista)", mostrar_ventana_lista),
+            ("Tareas", mostrar_ventana_tareas)
         ]
 
         for texto, comando in botones:

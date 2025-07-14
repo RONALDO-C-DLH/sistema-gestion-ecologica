@@ -7,6 +7,7 @@ Aplicación para gestionar recursos ecológicos en la ciudad:
 - **Listas:** Puntos limpios y áreas verdes.
 - **Árboles:** Búsqueda geográfica o por tipo.
 - **Grafos:** Relaciones entre iniciativas comunitarias.
+- **Tareas:** Gestión de tareas pendientes.
 
 ## Tecnologías
 - Python 3.x
